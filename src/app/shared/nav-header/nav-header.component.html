@@ -1,0 +1,108 @@
+
+<!-- <nav  class="navbar navbar-expand-lg navbar-dark bg-primary" [ngClass]="navHeaderService?.menuTransparent">
+  <button class="navbar-toggler" type="button" (click)="toggleMenu()">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div id="navbarNavDropdown" class="navbar-collapse collapse sidebar" [ngClass]="toggleMenuBar">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" (click)="toggleMenu()">CRM</a>
+      </li>
+      </ul>
+      <ul class="navbar-nav">
+         <li class="nav-item">
+              <a class="nav-link" (click)="toggleMenu()">Home</a>
+          </li>
+         <li class="nav-item">
+              <a class="nav-link" (click)="toggleMenu()">Login</a>
+         </li>
+      </ul>
+  </div>
+</nav><br>
+<div style="text-align:center">
+        <input type="file" (change)="uploadingfile($event)" placeholder="Upload file" accept=".xlsx">
+        <button type="button" class="btn btn-info" (click)="Upload()" >Upload</button>
+</div>
+<div class="row">
+    <div class="col-md-3 text-center"><strong>Name</strong></div>
+    <div class="col-md-3 text-center"><strong>Phone</strong></div>
+    <div class="col-md-3 text-center"><strong>Address</strong></div>
+    <div class="col-md-3 text-center"><strong>Email</strong></div>
+</div>
+<div class="row border-bottom" *ngFor="let data of newCustomer">
+        <div class="col-md-1 text-center"><input 
+        type="checkbox" 
+        />
+        <div class="col-md-2 text-center">{{data.name}}</div>
+        <div class="col-md-3 text-center">{{data.phone}}</div>
+        <div class="col-md-3 text-center">{{data.address}}</div>
+        <div class="col-md-3 text-center">{{data.email}}</div>
+    </div>
+</div><br>
+
+<div class="text-center">
+    <button class="btn btn-success " (click)="shareContent()">
+                                           SHARE
+    </button>
+  </div><br>
+  <div class="text-center">
+       
+    <button class="btn btn-primary " (click)="shareFacebook()">
+                                           facebook
+    </button>
+  </div> -->
+<div class="container" style= "margin-top:150px; ">
+<div class="row">
+    <div class="col-md-2">
+            <form [formGroup]="copyForm" (ngSubmit)="copy(copyForm)">
+                    <div class="form-group">
+                    <label>Copy path</label>
+                    <input type="text"  class="form-control required" required formControlName="url"
+                      />
+                    </div>
+                    <button class="btn btn-primary">Copy</button>
+            </form>
+    </div>
+    <div class="col-md-2">
+        <form [formGroup]="copyForm" (ngSubmit)="renameOriginal(copyForm)">
+                <div class="form-group">
+                <label>Rename path</label>
+                <input type="text"  class="form-control required" required formControlName="url"
+                />
+                </div>
+                <button class="btn btn-primary">Rename Original</button>
+        </form>
+    </div>
+    <div class="col-md-3">
+            <form [formGroup]="copyForm" (ngSubmit)="renameCropped(copyForm)">
+                    <div class="form-group">
+                    <label>Rename Cropped path:</label>
+                    <input type="text"  class="form-control required" required formControlName="url"
+                      />
+                    </div>
+                    <button class="btn btn-primary">Rename Cropped_not_compressed</button>
+            </form>
+        </div>
+        <div class="col-md-2">
+            <form [formGroup]="copyForm" (ngSubmit)="resizeCopy(copyForm)">
+                    <div class="form-group">
+                    <label>Resize path:</label>
+                    <input type="text"  class="form-control required" required formControlName="url"
+                      />
+                    </div>
+                    <button class="btn btn-primary">Resize</button>
+            </form>
+        </div>     
+        <div class="col-md-3">
+            <form [formGroup]="copyForm" (ngSubmit)="resizeRename(copyForm)">
+                <div class="form-group">
+                <label>Resize Rename path:</label>
+                <input type="text"  class="form-control required" required formControlName="url"
+                  />
+                </div>
+                <button class="btn btn-primary">Resize image Rename</button>
+        </form>
+        </div>       
+</div>
+</div>
+
